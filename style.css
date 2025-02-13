@@ -14,12 +14,13 @@ header {
   transform: translateX(-50%);
   display: flex;
   align-items: center;
-  justify-content: center;
-  gap: 5rem;
+  justify-content: space-between;
+  width: 65%;
+  gap: 2rem;
   background-color: rgba(0, 0, 0, 0.8);
   backdrop-filter: blur(8px);
   color: white;
-  padding: 0.1rem 1.5rem;
+  padding: 0.5rem 2rem;
   border-radius: 3rem;
   z-index: 1000;
 }
@@ -35,7 +36,7 @@ header {
 }
 .nav-links {
   display: flex;
-  gap: 2rem;
+  gap: 3rem;
   text-wrap: nowrap;
 }
 li a {
@@ -58,7 +59,7 @@ li a::before {
 li a:hover::before {
   width: 100%;
 }
-.header-github-btn {
+/*.header-github-btn {
   display: inline-flex;
   align-items: center;
   gap: 0.5rem;
@@ -97,7 +98,7 @@ li a:hover::before {
 
 .header-github-btn:hover {
   transform: scale(1.05);
-}
+}*/
 #menu-icon {
   font-size: 2rem;
   display: none;
@@ -408,4 +409,198 @@ section {
   color: #ff0000;
   margin: 0 0.3rem;
   font-size: 1rem;
+}
+/* Add new breakpoint for large tablets/small desktops */
+@media (max-width: 1080px) {
+  header {
+    width: 65%;
+    padding: 0.5rem 1.5rem;
+  }
+  .nav-links {
+    display: flex; /* Ensure links are visible */
+    gap: 2rem; /* Slightly reduce gap */
+  }
+}
+
+@media (max-width: 768px) {
+  header {
+    width: 92%;
+    padding: 0.5rem 1.2rem;
+    gap: 1rem;
+  }
+  /* Keep nav-links visible */
+  .nav-links {
+    display: flex;
+    gap: 1.5rem;
+  }
+  .about .about-container {
+    flex-direction: column;
+    gap: 2rem;
+  }
+  .about img {
+    width: 35%;
+  }
+  .info-box h1 {
+    font-size: 3rem;
+  }
+  .info-box span {
+    font-size: 1.5rem;
+  }
+  .btn-group {
+    flex-direction: row;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+  }
+  .projects-grid {
+    grid-template-columns: 1fr;
+  }
+  .project-card img {
+    width: 70%;
+  }
+  section {
+    padding: 6rem 6%;
+  }
+  .skills-grid {
+    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+    gap: 1.5rem;
+  }
+  .hire-container {
+    max-width: 100%;
+    padding: 0 1rem;
+  }
+  .hire-container h2 {
+    font-size: 2rem;
+  }
+}
+
+@media (max-width: 680px) {
+  header {
+    width: 95%;
+    padding: 0.5rem 1rem;
+    gap: 1rem;
+    width: 90%;
+    justify-content: space-between;
+  }
+  .nav-links {
+    display: none; /* Hide only at mobile breakpoint */
+  }
+  .about .about-container {
+    flex-direction: column;
+    gap: 2rem;
+  }
+  .about img {
+    width: 45%;
+  }
+  .info-box h1 {
+    font-size: 2.5rem;
+  }
+  .info-box span {
+    font-size: 1.2rem;
+  }
+  .btn-group {
+    flex-direction: row;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 0.8rem;
+  }
+  .projects-grid {
+    grid-template-columns: 1fr;
+  }
+  .project-card img {
+    width: 90%;
+  }
+  section {
+    padding: 4rem 5%;
+  }
+  .nav-links {
+    display: none;
+  }
+  .header-github-btn {
+    display: none;
+  }
+  #menu-icon {
+    display: block;
+    font-size: 1.6rem; /* Reduced from 2rem */
+  }
+  .socials {
+    gap: 1rem;
+  }
+  .socials i {
+    font-size: 1.8rem;
+  }
+  .footer {
+    width: 90%;
+    margin: 0.5rem auto;
+    padding: 0.8rem 1.5rem;
+  }
+}
+@media (max-width: 480px) {
+  header {
+    width: 90%;
+    padding: 0.5rem 1rem;
+    top: 0.5rem;
+  }
+  .logo {
+    font-size: 1.2rem;
+  }
+  .about img {
+    width: 50%;
+  }
+  .btn-group {
+    flex-direction: row;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 0.6rem;
+  }
+  .btn {
+    padding: 0.4rem 1rem;
+    font-size: 0.9rem;
+  }
+  .info-box h1 {
+    font-size: 2rem;
+  }
+  .info-box h3 {
+    font-size: 1.4rem;
+  }
+  .info-box span {
+    font-size: 1rem;
+  }
+  .skills-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .project-card {
+    padding: 1.5rem 1rem;
+  }
+  .project-card h3 {
+    font-size: 1.3rem;
+  }
+  .project-card img {
+    width: 90%;
+  }
+  section {
+    padding: 4rem 4%;
+  }
+  .form-group input,
+  .form-group textarea {
+    padding: 0.8rem 0.8rem 0.8rem 3rem;
+  }
+  .skill {
+    padding: 1rem;
+  }
+  #menu-icon {
+    font-size: 1.4rem;
+  }
+  .footer {
+    width: 95%;
+    padding: 0.6rem 1rem;
+  }
+  .footer p {
+    font-size: 0.9rem;
+  }
+
+  .footer i {
+    font-size: 0.9rem;
+    margin: 0 0.2rem;
+  }
 }

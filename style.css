@@ -160,9 +160,13 @@ section {
   color: transparent;
   font-size: 2rem;
 }
+
 .btn-group {
   display: flex;
   gap: 1rem;
+}
+.btn-group a {
+  color: black;
 }
 .btn {
   border-radius: 3rem;
@@ -375,4 +379,33 @@ section {
   border-radius: 1rem;
   display: none;
   z-index: 1001;
+}
+
+.footer {
+  background-color: rgba(0, 0, 0);
+  backdrop-filter: blur(8px);
+  color: white;
+  padding: 1rem 2rem;
+  border-radius: 3rem;
+  text-align: center;
+  width: fit-content;
+  margin: 0.5rem auto;
+  font-family: Poppins, sans-serif;
+}
+
+.footer-container {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.footer p {
+  margin: 0;
+  font-size: 1rem;
+}
+
+.footer i {
+  color: #ff0000;
+  margin: 0 0.3rem;
+  font-size: 1rem;
 }

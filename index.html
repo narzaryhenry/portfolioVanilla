@@ -61,7 +61,7 @@
           </div>
           <div class="btn-group">
             <div class="btn">Resume</div>
-            <div class="btn">Contact</div>
+            <a href="#hire" class="btn">Contact</a>
           </div>
           <div class="socials">
             <i class="fa-brands fa-github"></i>
@@ -259,8 +259,21 @@
 
     <!-- Popup Notification -->
     <div id="popup" class="popup">Email has been sent!</div>
+
+    <footer class="footer">
+      <div class="footer-container">
+        <p>
+          Made with <i class="fa-solid fa-heart"></i> by Henry Narzary | &copy;
+          <span id="year"></span> | All rights reserved.
+        </p>
+      </div>
+    </footer>
+
     <script src="script.js"></script>
     <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
     <script src="email.js"></script>
+    <script>
+      document.getElementById("year").textContent = new Date().getFullYear();
+    </script>
   </body>
 </html>

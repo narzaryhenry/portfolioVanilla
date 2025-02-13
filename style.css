@@ -189,6 +189,10 @@ section {
 .socials i:hover {
   transform: scale(1.1);
 }
+
+#linkedIn-socials {
+  color: #0a66c2;
+}
 /* Skills Section Styles */
 .skills {
   min-height: 100vh;

@@ -17,7 +17,7 @@ header {
   justify-content: space-between;
   width: 65%;
   gap: 2rem;
-  background-color: rgba(0, 0, 0, 0.8);
+  background-color: rgba(0, 0, 0);
   backdrop-filter: blur(8px);
   color: white;
   padding: 0.5rem 2rem;
@@ -410,15 +410,14 @@ section {
   margin: 0 0.3rem;
   font-size: 1rem;
 }
-/* Add new breakpoint for large tablets/small desktops */
 @media (max-width: 1080px) {
   header {
     width: 65%;
     padding: 0.5rem 1.5rem;
   }
   .nav-links {
-    display: flex; /* Ensure links are visible */
-    gap: 2rem; /* Slightly reduce gap */
+    display: flex;
+    gap: 2rem;
   }
 }
 
@@ -476,14 +475,35 @@ section {
 
 @media (max-width: 680px) {
   header {
-    width: 95%;
+    width: 90%;
     padding: 0.5rem 1rem;
     gap: 1rem;
-    width: 90%;
     justify-content: space-between;
   }
   .nav-links {
-    display: none; /* Hide only at mobile breakpoint */
+    display: none;
+    position: absolute;
+    top: 120%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 90%;
+    background: rgba(0, 0, 0, 0.95);
+    backdrop-filter: blur(10px);
+    padding: 1.2rem;
+    border-radius: 1rem;
+    text-align: center;
+  }
+  .nav-links.active {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1.5rem;
+    animation: slideDown 0.3s ease-in-out;
+  }
+  .nav-links a {
+    width: 100%;
+    padding: 0.5rem 0;
   }
   .about .about-container {
     flex-direction: column;
@@ -521,7 +541,12 @@ section {
   }
   #menu-icon {
     display: block;
-    font-size: 1.6rem; /* Reduced from 2rem */
+    font-size: 1.6rem;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+  }
+  #menu-icon.fa-times {
+    transform: rotate(180deg);
   }
   .socials {
     gap: 1rem;
@@ -602,5 +627,16 @@ section {
   .footer i {
     font-size: 0.9rem;
     margin: 0 0.2rem;
+  }
+}
+
+@keyframes slideDown {
+  0% {
+    opacity: 0;
+    transform: translate(-50%, -20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translate(-50%, 0);
   }
 }
